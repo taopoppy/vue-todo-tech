@@ -1,0 +1,6 @@
+// import './instance'
+// import './lifecycle'
+// import './computed'
+// import './direactive'
+// import './define'
+import './v-model'
