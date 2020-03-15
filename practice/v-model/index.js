@@ -8,12 +8,11 @@ const component = {
   props: ['value1'],
   template: `
     <div>
-      <input type="text" @input="handleInput" :value="value1">
-      <input type="text" @input="handleInput" :value="value1">
+      <input type="text" @input="handleInput1" :value="value1">
     </div>
   `,
   methods: {
-    handleInput (e) {
+    handleInput1 (e) {
       this.$emit('change', e.target.value)
     }
   }
@@ -30,7 +29,7 @@ new Vue({
   },
   template: `
     <div>
-      <comp-one v-model="value""></comp-one>
+      <comp-one :value1="value" @change="value = arguments[0]"></comp-one>
     </div>
   `
 })

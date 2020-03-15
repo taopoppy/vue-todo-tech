@@ -3,4 +3,6 @@
 // import './computed'
 // import './direactive'
 // import './define'
-import './v-model'
+// import './v-model'
+// import './feature'
+import './render'
