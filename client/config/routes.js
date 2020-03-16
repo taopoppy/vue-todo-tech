@@ -3,8 +3,24 @@ import Login from '../views/login/login.vue'
 
 export default [
   {
-    path: '/app',
-    component: Todo
+    path: '/',
+    redirect: '/app'
+  },
+  {
+    path: '/app/:id',
+    // props: true,
+    component: Todo,
+    name: 'app',
+    meta: {
+      title: 'this is app',
+      description: 'the main page of application'
+    }
+    // children: [
+    //   {
+    //     path: 'test',
+    //     component: Login
+    //   }
+    // ]
   },
   {
     path: '/login',
