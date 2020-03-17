@@ -1,5 +1,3 @@
-import Todo from '../views/todo/todo.vue'
-import Login from '../views/login/login.vue'
 
 export default [
   {
@@ -9,11 +7,20 @@ export default [
   {
     path: '/app/:id',
     // props: true,
-    component: Todo,
+    // path: '/app',
+    component: () => import('../views/todo/todo.vue'),
+    // components: {
+    //   default: Todo,
+    //   foot: Login
+    // },
     name: 'app',
     meta: {
       title: 'this is app',
       description: 'the main page of application'
+    },
+    beforeEnter (to, from, next) {
+      console.log('beforeEnter')
+      next()
     }
     // children: [
     //   {
@@ -24,6 +31,6 @@ export default [
   },
   {
     path: '/login',
-    component: Login
+    component: () => import('../views/login/login.vue')
   }
 ]

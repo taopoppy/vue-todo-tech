@@ -27,6 +27,19 @@ import Item from './item.vue'
 import Tabs from './tabs.vue'
 let id = 0
 export default {
+  beforeRouteEnter (to, from, next) {
+    console.log('todo beforeRouterEnter')
+    next()
+  },
+  beforeRouteUpdate (to, from, next) {
+    console.log('todo beforeRouterUpdate')
+    next()
+  },
+  beforeRouteLeave (to, from, next) {
+    console.log('todo beforeRouterLeave')
+    next()
+  },
+  props: ['id'],
   data () {
     return {
       todos: [],
