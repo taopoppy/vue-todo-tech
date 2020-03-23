@@ -5,9 +5,9 @@ export default [
     redirect: '/app'
   },
   {
-    path: '/app/:id',
+    // path: '/app/:id',
     // props: true,
-    // path: '/app',
+    path: '/app',
     component: () => import('../views/todo/todo.vue'),
     // components: {
     //   default: Todo,

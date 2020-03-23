@@ -35,10 +35,10 @@ export default {
     // Todo
   },
   mounted () {
-    this.updateCountAsync({
-      num: 5,
-      time: 2000
-    })
+    // this.updateCountAsync({
+    //   num: 5,
+    //   time: 2000
+    // })
     // this.$store.dispatch('updateCountAsync', {
     //   num: 5,
     //   time: 2000
