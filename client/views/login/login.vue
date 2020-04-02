@@ -4,6 +4,9 @@
 
 <script>
 export default {
+  metaInfo: {
+    title: 'Login Page'
+  },
   beforeRouteEnter (to, from, next) {
     console.log('login beforeRouterEnter')
     next()

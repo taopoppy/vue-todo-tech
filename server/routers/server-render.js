@@ -10,12 +10,13 @@ module.exports = async (ctx, renderer, template) => {
 
   try {
     const appString = await renderer.renderToString(context)
-
+    const { title } = context.meta.inject()
     // 渲染出html
     const html = ejs.render(template, {
       appString,
       style: context.renderStyles(), // 拿到带有style的整个标签
-      scripts: context.renderScripts() // 拿到带有script的整个标签
+      scripts: context.renderScripts(), // 拿到带有script的整个标签
+      title: title.text()
     })
 
     // 返回给客户端我们的html内容

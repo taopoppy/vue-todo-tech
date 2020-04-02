@@ -26,6 +26,7 @@ const devServer = {
   overlay: {
     errors: true
   },
+  headers: {'Access-Control-Allow-Origin': '*'},
   historyApiFallback: {
     index: '/public/index.html'
   },
@@ -63,11 +64,12 @@ if (isDev) {
 } else {
   config = merge(baseConfig, {
     entry: {
-      app: path.join(__dirname, '../client/index.js'),
+      app: path.join(__dirname, '../client/client-entry.js'),
       vendor: ['vue']
     },
     output: {
-      filename: '[name].[chunkhash:8].js'
+      filename: '[name].[chunkhash:8].js',
+      publicPath: '/public/'
     },
     module: {
       rules: [

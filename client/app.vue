@@ -4,14 +4,17 @@
     <Header></Header>
     <p>{{count}}</p>
     <p>{{fullName}}</p>
+
     <!-- <router-link to="/app">app</router-link> -->
-    <router-link to="/app/123">app123</router-link>
+    <!-- <router-link to="/app/123">app123</router-link>
     <router-link to="/app/456">app456</router-link>
-    <router-link to="/login">login</router-link>
+    <router-link to="/login">login</router-link> -->
     <!-- <todo></todo> -->
     <transition name="fade">
       <router-view/>
     </transition>
+    <!-- <notification content="test notify" /> -->
+    <button @click="notify">add notify</button>
     <Footer></Footer>
     <!-- <router-view name="foot"/> -->
   </div>
@@ -29,6 +32,9 @@ import Footer from './layout/footer.jsx'
 // import Todo from './views/todo/todo.vue'
 
 export default {
+  metaInfo: {
+    title: 'Taopoppy\'s Todo App'
+  },
   components: {
     Header,
     Footer
@@ -70,7 +76,13 @@ export default {
   },
   methods: {
     ...mapActions(['updateCountAsync']),
-    ...mapMutations(['updateCount'])
+    ...mapMutations(['updateCount']),
+    notify () {
+      this.$notify({
+        content: 'test $notify',
+        btn: 'close'
+      })
+    }
   }
 }
 </script>
